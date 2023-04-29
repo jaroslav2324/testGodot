@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://darndyl1j2to4"]
+[gd_scene load_steps=9 format=3 uid="uid://darndyl1j2to4"]
 
 [ext_resource type="Texture2D" uid="uid://bomku5mqypwxq" path="res://textures/test/лодочник_тест.png" id="1_0qi3k"]
 [ext_resource type="Script" path="res://Игрок.gd" id="1_hl4fj"]
 [ext_resource type="Texture2D" uid="uid://c5gscs5028scx" path="res://pictures_test/lodka2.png" id="3_qkxlx"]
 [ext_resource type="Texture2D" uid="uid://dv60g3g0k8qup" path="res://textures/test/фонарь_тест.png" id="3_r10uj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p0q7p"]
+radius = 12.0
+height = 60.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mdcvi"]
 animations = [{
@@ -15,6 +19,10 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hdgtj"]
+radius = 21.0
+height = 144.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g684b"]
 animations = [{
@@ -37,6 +45,8 @@ metadata/_edit_group_ = true
 position = Vector2(0, -19)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Лодочник"]
+position = Vector2(4, -23)
+shape = SubResource("CapsuleShape2D_p0q7p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Лодочник"]
 position = Vector2(0, -33)
@@ -47,6 +57,9 @@ sprite_frames = SubResource("SpriteFrames_mdcvi")
 position = Vector2(31, -32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Лодка"]
+position = Vector2(4, 38)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_hdgtj")
 
 [node name="Sprite2D" type="Sprite2D" parent="Лодка"]
 position = Vector2(1.90735e-06, -1.90735e-06)
@@ -64,5 +77,9 @@ sprite_frames = SubResource("SpriteFrames_g684b")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="StrokeTimer" type="Timer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(189, -84)
+position_smoothing_enabled = true
 
 [connection signal="timeout" from="StrokeTimer" to="." method="_on_stroke_timer_timeout"]

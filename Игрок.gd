@@ -4,6 +4,8 @@ extends Node2D
 @export var max_velocity = 220
 @export var back_acceleration = 1
 
+signal stroke_on_water
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.position.x = 200
@@ -14,6 +16,7 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("stroke"):
 		increase_velocity()
+		stroke_on_water.emit()
 		# set timer for continuous movement(hold space)
 		$StrokeTimer.start()
 		
@@ -39,3 +42,4 @@ func apply_back_acceleration():
 
 func _on_stroke_timer_timeout():
 	increase_velocity()
+	stroke_on_water.emit()
