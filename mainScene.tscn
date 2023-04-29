@@ -1,9 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnh6ocjdbamb0"]
+[gd_scene load_steps=8 format=3 uid="uid://dnh6ocjdbamb0"]
 
 [ext_resource type="PackedScene" uid="uid://darndyl1j2to4" path="res://Игрок.tscn" id="1_66q7l"]
 [ext_resource type="Script" path="res://mainScene.gd" id="1_lsrb5"]
 [ext_resource type="PackedScene" path="res://Монстр.tscn" id="2_afctq"]
 [ext_resource type="Texture2D" uid="uid://3vo057f8c3b0" path="res://textures/test/Фон.png" id="4_k204w"]
+[ext_resource type="Texture2D" uid="uid://bwojbgtsl0llq" path="res://textures/test/sea_basic.png" id="5_8r2fb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pf30d"]
+texture = ExtResource("5_8r2fb")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_0drbj"]
+sources/0 = SubResource("TileSetAtlasSource_pf30d")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lsrb5")
@@ -16,3 +32,9 @@ script = ExtResource("1_lsrb5")
 position = Vector2(383.5, -54)
 scale = Vector2(2.02083, 1)
 texture = ExtResource("4_k204w")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(0, -41)
+tile_set = SubResource("TileSet_0drbj")
+format = 2
+layer_0/tile_data = PackedInt32Array(1245179, 65536, 0, 1245180, 196608, 0, 1245181, 65536, 0, 1245182, 65536, 0, 1245183, 65536, 0, 1179648, 0, 0, 1179649, 0, 0, 1179650, 196608, 0, 1179651, 131072, 0, 1179652, 0, 0, 1179653, 65536, 0, 1179654, 131072, 0, 1179655, 131072, 0, 1179656, 131072, 0, 1179657, 131072, 0, 1179658, 65536, 0, 1179659, 196608, 0, 1179660, 196608, 0, 1179661, 65536, 0, 1179663, 0, 0, 1179664, 65536, 0, 1179665, 0, 0, 1179666, 196608, 0, 1179667, 65536, 0, 1179668, 65536, 0, 1179669, 131072, 0, 1179670, 131072, 0, 1179671, 196608, 0, 1179672, 0, 0, 1179673, 0, 0, 1179678, 65536, 0, 1179691, 65536, 0, 1179684, 196608, 0, 1179696, 196608, 0)
