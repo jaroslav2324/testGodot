@@ -2,8 +2,8 @@ extends RigidBody2D
 
 @export var monsterSpeed = 100
 func _ready():
-	self.position.x = 100
-	self.position.y = 450
+	self.position.x = -400
+	self.position.y = 100
 
 func _process(delta):
 	self.linear_velocity = Vector2(monsterSpeed,0)
