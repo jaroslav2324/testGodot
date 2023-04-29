@@ -10,8 +10,6 @@ signal stroke_on_water
 func _ready():
 	$"Лодочник/StrokeComplete".hide()
 	$"Лодочник/StrokeReady".hide()
-	self.position.x = 200
-	self.position.y = 300
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -57,18 +55,27 @@ func _on_stroke_timer_timeout():
 
 func set_stroke_complete_texture():
 	$"Лодочник/StrokeComplete".show()
+	$"Лодочник/VesloComplete".show()
 	$"Лодочник/StrokeReady".hide()
+	$"Лодочник/VesloReady".hide()
 	$"Лодочник/StrokeSitting".hide()
+	$"Лодочник/VesloSitting".hide()
 	
 func set_stroke_ready_texture():
 	$"Лодочник/StrokeReady".show()
+	$"Лодочник/VesloReady".show()
 	$"Лодочник/StrokeComplete".hide()
+	$"Лодочник/VesloComplete".hide()
 	$"Лодочник/StrokeSitting".hide()
+	$"Лодочник/VesloSitting".hide()
 	
 func set_stroke_sitting_texture():
 	$"Лодочник/StrokeSitting".show()
+	$"Лодочник/VesloSitting".show()
 	$"Лодочник/StrokeReady".hide()
+	$"Лодочник/VesloReady".hide()
 	$"Лодочник/StrokeComplete".hide()
+	$"Лодочник/VesloComplete".hide()
 
 
 func _on_stroke_timer_sitting_timeout():
