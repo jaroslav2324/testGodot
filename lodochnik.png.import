@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nd6ntl3q0ern"
-path="res://.godot/imported/lodochnik.png-128a8f91f14256914172ca1e9022a9bf.ctex"
+uid="uid://c12d6qwna0bda"
+path="res://.godot/imported/lodochnik.png-12cbe08cfe35fd50b101a16ff7e1dbc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pictures_test/lodochnik.png"
-dest_files=["res://.godot/imported/lodochnik.png-128a8f91f14256914172ca1e9022a9bf.ctex"]
+source_file="res://lodochnik.png"
+dest_files=["res://.godot/imported/lodochnik.png-12cbe08cfe35fd50b101a16ff7e1dbc1.ctex"]
 
 [params]
 
