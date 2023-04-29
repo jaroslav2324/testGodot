@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var max_anger_count = 3
+@export var current_anger_count = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,7 +10,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var playerPosX = get_node("Игрок").position.x
-	var monsterPosX = get_node("Монстр").position.x
-	
-		
+	pass

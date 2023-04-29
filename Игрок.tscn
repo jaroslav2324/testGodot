@@ -1,24 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://darndyl1j2to4"]
+[gd_scene load_steps=8 format=3 uid="uid://darndyl1j2to4"]
 
-[ext_resource type="Texture2D" uid="uid://bomku5mqypwxq" path="res://textures/test/лодочник_тест.png" id="1_0qi3k"]
 [ext_resource type="Script" path="res://Игрок.gd" id="1_hl4fj"]
+[ext_resource type="Texture2D" uid="uid://nd6ntl3q0ern" path="res://pictures_test/lodochnik.png" id="2_o2ssl"]
 [ext_resource type="Texture2D" uid="uid://c5gscs5028scx" path="res://pictures_test/lodka2.png" id="3_qkxlx"]
 [ext_resource type="Texture2D" uid="uid://dv60g3g0k8qup" path="res://textures/test/фонарь_тест.png" id="3_r10uj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p0q7p"]
 radius = 12.0
 height = 60.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_mdcvi"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_0qi3k")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hdgtj"]
 radius = 21.0
@@ -45,13 +34,37 @@ metadata/_edit_group_ = true
 position = Vector2(0, -19)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Лодочник"]
-position = Vector2(4, -23)
+position = Vector2(4, -6)
 shape = SubResource("CapsuleShape2D_p0q7p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Лодочник"]
-position = Vector2(0, -33)
-scale = Vector2(1.06, 0.99)
-sprite_frames = SubResource("SpriteFrames_mdcvi")
+[node name="StrokeTimerComplete" type="Timer" parent="Лодочник"]
+wait_time = 0.2
+one_shot = true
+
+[node name="StrokeTimerSitting" type="Timer" parent="Лодочник"]
+wait_time = 0.6
+one_shot = true
+
+[node name="StrokeComplete" type="Sprite2D" parent="Лодочник"]
+position = Vector2(14.5, -7.5)
+scale = Vector2(0.965909, 0.919643)
+texture = ExtResource("2_o2ssl")
+region_enabled = true
+region_rect = Rect2(184, 8, 64, 88)
+
+[node name="StrokeReady" type="Sprite2D" parent="Лодочник"]
+position = Vector2(-6.58929, -4.99999)
+scale = Vector2(0.816964, 0.8)
+texture = ExtResource("2_o2ssl")
+region_enabled = true
+region_rect = Rect2(32, 16, 72, 80)
+
+[node name="StrokeSitting" type="Sprite2D" parent="Лодочник"]
+position = Vector2(4.5, -8.13636)
+scale = Vector2(0.854167, 0.885101)
+texture = ExtResource("2_o2ssl")
+region_enabled = true
+region_rect = Rect2(312, 16, 48, 72)
 
 [node name="Лодка" type="Area2D" parent="."]
 position = Vector2(31, -32)
@@ -82,4 +95,6 @@ sprite_frames = SubResource("SpriteFrames_g684b")
 position = Vector2(189, -84)
 position_smoothing_enabled = true
 
+[connection signal="timeout" from="Лодочник/StrokeTimerComplete" to="." method="_on_stroke_timer_complete_timeout"]
+[connection signal="timeout" from="Лодочник/StrokeTimerSitting" to="." method="_on_stroke_timer_sitting_timeout"]
 [connection signal="timeout" from="StrokeTimer" to="." method="_on_stroke_timer_timeout"]
