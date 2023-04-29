@@ -1,10 +1,9 @@
-extends Node2D
+extends Area2D
 
-@export var max_anger_count = 3
-@export var current_anger_count= 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	self.position.x = -400
+	self.position.y = 100
 	pass # Replace with function body.
 
 

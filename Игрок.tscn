@@ -27,8 +27,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbjht"]
+size = Vector2(185, 32)
+
 [node name="Игрок" type="RigidBody2D"]
-position = Vector2(-28, 15)
+position = Vector2(20, 1)
 gravity_scale = 0.0
 script = ExtResource("1_hl4fj")
 metadata/_edit_group_ = true
@@ -120,6 +123,8 @@ position = Vector2(-148, -1)
 sprite_frames = SubResource("SpriteFrames_g684b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(30.5, 6)
+shape = SubResource("RectangleShape2D_sbjht")
 
 [node name="StrokeTimer" type="Timer" parent="."]
 

@@ -2,7 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://darndyl1j2to4" path="res://Игрок.tscn" id="1_66q7l"]
 [ext_resource type="Script" path="res://mainScene.gd" id="1_lsrb5"]
-[ext_resource type="PackedScene" path="res://Монстр.tscn" id="2_afctq"]
+[ext_resource type="PackedScene" uid="uid://xvcqbfvjchas" path="res://Монстр.tscn" id="2_afctq"]
+[ext_resource type="PackedScene" uid="uid://dioe4arcbvwk" path="res://глаз.tscn" id="4_c5pfo"]
 [ext_resource type="Texture2D" uid="uid://bwojbgtsl0llq" path="res://textures/test/sea_basic.png" id="5_8r2fb"]
 [ext_resource type="Texture2D" uid="uid://18y4phhh18px" path="res://pictures_test/sky_sunset_basic.png" id="5_yo43n"]
 
