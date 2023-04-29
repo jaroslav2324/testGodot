@@ -59,7 +59,7 @@ func _on_stroke_timer_timeout():
 func play_veslo_sound():
 	var p = randf()
 	if p > 0.5:
-	$veslo1player.play()
+		$veslo1player.play()
 	else:
 		$veslo2palyer.play()
 	

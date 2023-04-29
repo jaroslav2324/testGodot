@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://darndyl1j2to4"]
+[gd_scene load_steps=12 format=3 uid="uid://darndyl1j2to4"]
 
 [ext_resource type="Script" path="res://Игрок.gd" id="1_hl4fj"]
 [ext_resource type="Texture2D" uid="uid://nd6ntl3q0ern" path="res://pictures_test/lodochnik.png" id="2_o2ssl"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ciplur5cpq6si" path="res://pictures_test/lodka2.png" id="3_qkxlx"]
 [ext_resource type="Texture2D" uid="uid://dv60g3g0k8qup" path="res://textures/test/фонарь_тест.png" id="3_r10uj"]
 [ext_resource type="AudioStream" uid="uid://ck22bl0dkvstp" path="res://sounds/veslo_plesk.mp3" id="6_1p5ty"]
+[ext_resource type="AudioStream" uid="uid://d005lv3sj1o55" path="res://sounds/veslo_plesk2.mp3" id="7_bcd3o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p0q7p"]
 radius = 12.0
@@ -26,8 +27,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbjht"]
+size = Vector2(185, 32)
+
 [node name="Игрок" type="RigidBody2D"]
-position = Vector2(-28, 15)
+position = Vector2(20, 1)
 gravity_scale = 0.0
 script = ExtResource("1_hl4fj")
 metadata/_edit_group_ = true
@@ -119,6 +123,8 @@ position = Vector2(-148, -1)
 sprite_frames = SubResource("SpriteFrames_g684b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(30.5, 6)
+shape = SubResource("RectangleShape2D_sbjht")
 
 [node name="StrokeTimer" type="Timer" parent="."]
 
@@ -126,8 +132,11 @@ sprite_frames = SubResource("SpriteFrames_g684b")
 position = Vector2(189, -84)
 position_smoothing_enabled = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="veslo1player" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_1p5ty")
+
+[node name="veslo2palyer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_bcd3o")
 
 [connection signal="timeout" from="Лодочник/StrokeTimerComplete" to="." method="_on_stroke_timer_complete_timeout"]
 [connection signal="timeout" from="Лодочник/StrokeTimerSitting" to="." method="_on_stroke_timer_sitting_timeout"]
