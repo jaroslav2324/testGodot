@@ -8,8 +8,6 @@ extends Node2D
 func _ready():
 	self.position.x = 200
 	self.position.y = 300
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

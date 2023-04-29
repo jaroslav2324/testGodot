@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bomku5mqypwxq" path="res://textures/test/лодочник_тест.png" id="1_0qi3k"]
 [ext_resource type="Script" path="res://Игрок.gd" id="1_hl4fj"]
-[ext_resource type="Texture2D" uid="uid://s16m5vy45i5m" path="res://textures/test/лодка_test.png" id="2_4h5k3"]
+[ext_resource type="Texture2D" uid="uid://c5gscs5028scx" path="res://pictures_test/lodka2.png" id="3_qkxlx"]
 [ext_resource type="Texture2D" uid="uid://dv60g3g0k8qup" path="res://textures/test/фонарь_тест.png" id="3_r10uj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mdcvi"]
@@ -44,17 +44,17 @@ scale = Vector2(1.06, 0.99)
 sprite_frames = SubResource("SpriteFrames_mdcvi")
 
 [node name="Лодка" type="Area2D" parent="."]
-position = Vector2(28, -15)
+position = Vector2(31, -32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Лодка"]
 
 [node name="Sprite2D" type="Sprite2D" parent="Лодка"]
 position = Vector2(1.90735e-06, -1.90735e-06)
 scale = Vector2(1.59, 1.3)
-texture = ExtResource("2_4h5k3")
+texture = ExtResource("3_qkxlx")
 
 [node name="Фонарь" type="Area2D" parent="."]
-position = Vector2(99, -30)
+position = Vector2(113, -65)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Фонарь"]
 
