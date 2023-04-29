@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://darndyl1j2to4"]
+[gd_scene load_steps=9 format=3 uid="uid://darndyl1j2to4"]
 
 [ext_resource type="Script" path="res://Игрок.gd" id="1_hl4fj"]
 [ext_resource type="Texture2D" uid="uid://nd6ntl3q0ern" path="res://pictures_test/lodochnik.png" id="2_o2ssl"]
+[ext_resource type="Texture2D" uid="uid://c2bfi30l2l3bq" path="res://pictures_test/vesla.png" id="3_5dclw"]
 [ext_resource type="Texture2D" uid="uid://ciplur5cpq6si" path="res://pictures_test/lodka2.png" id="3_qkxlx"]
 [ext_resource type="Texture2D" uid="uid://dv60g3g0k8qup" path="res://textures/test/фонарь_тест.png" id="3_r10uj"]
 
@@ -69,6 +70,19 @@ scale = Vector2(0.854167, 0.885101)
 texture = ExtResource("2_o2ssl")
 region_enabled = true
 region_rect = Rect2(312, 16, 48, 72)
+
+[node name="VesloComplete" type="Sprite2D" parent="Лодочник"]
+position = Vector2(6, 0)
+
+[node name="VesloSitting" type="Sprite2D" parent="Лодочник"]
+position = Vector2(47, 13)
+rotation = -0.598648
+texture = ExtResource("3_5dclw")
+region_enabled = true
+region_rect = Rect2(136, 29.5, 88, 83)
+
+[node name="VesloReady" type="Sprite2D" parent="Лодочник"]
+position = Vector2(-2, -6)
 
 [node name="Лодка" type="Area2D" parent="."]
 position = Vector2(31, -12)
