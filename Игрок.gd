@@ -17,7 +17,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("stroke"):
 		increase_velocity()
 		stroke_on_water.emit()
-		$AudioStreamPlayer2D.play()
+		play_veslo_sound()
 		# set timer for continuous movement(hold space)
 		$StrokeTimer.start()
 		set_stroke_complete_texture()
@@ -53,9 +53,16 @@ func apply_back_acceleration():
 func _on_stroke_timer_timeout():
 	increase_velocity()
 	stroke_on_water.emit()
-	$AudioStreamPlayer2D.play()
+	play_veslo_sound()
 	
-
+	
+func play_veslo_sound():
+	var p = randf()
+	if p > 0.5:
+		$veslo1player.play()
+	else:
+		$veslo2palyer.play()
+	
 
 func set_stroke_complete_texture():
 	$"Лодочник/StrokeComplete".show()
