@@ -17,6 +17,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("stroke"):
 		increase_velocity()
 		stroke_on_water.emit()
+		$AudioStreamPlayer2D.play()
 		# set timer for continuous movement(hold space)
 		$StrokeTimer.start()
 		set_stroke_complete_texture()
@@ -52,6 +53,7 @@ func apply_back_acceleration():
 func _on_stroke_timer_timeout():
 	increase_velocity()
 	stroke_on_water.emit()
+	$AudioStreamPlayer2D.play()
 	
 
 
