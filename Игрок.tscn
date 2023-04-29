@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://bomku5mqypwxq" path="res://textures/test/лодочник_тест.png" id="1_0qi3k"]
 [ext_resource type="Script" path="res://Игрок.gd" id="1_hl4fj"]
-[ext_resource type="Texture2D" uid="uid://c5gscs5028scx" path="res://pictures_test/lodka2.png" id="3_qkxlx"]
 [ext_resource type="Texture2D" uid="uid://dv60g3g0k8qup" path="res://textures/test/фонарь_тест.png" id="3_r10uj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p0q7p"]
@@ -23,6 +22,9 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hdgtj"]
 radius = 21.0
 height = 144.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n0yna"]
+load_path = "res://.godot/imported/lodka2.png-d0ae43b92f986cfba5064ee9cea78429.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g684b"]
 animations = [{
@@ -64,7 +66,7 @@ shape = SubResource("CapsuleShape2D_hdgtj")
 [node name="Sprite2D" type="Sprite2D" parent="Лодка"]
 position = Vector2(1.90735e-06, -1.90735e-06)
 scale = Vector2(1.59, 1.3)
-texture = ExtResource("3_qkxlx")
+texture = SubResource("CompressedTexture2D_n0yna")
 
 [node name="Фонарь" type="Area2D" parent="."]
 position = Vector2(113, -65)
