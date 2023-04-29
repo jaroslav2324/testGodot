@@ -34,7 +34,7 @@ metadata/_edit_group_ = true
 position = Vector2(0, -19)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Лодочник"]
-position = Vector2(4, -6)
+position = Vector2(53, 0)
 shape = SubResource("CapsuleShape2D_p0q7p")
 
 [node name="StrokeTimerComplete" type="Timer" parent="Лодочник"]
@@ -45,32 +45,36 @@ one_shot = true
 wait_time = 0.6
 one_shot = true
 
+[node name="StrokeTimerReady" type="Timer" parent="Лодочник"]
+wait_time = 0.2
+one_shot = true
+
 [node name="StrokeComplete" type="Sprite2D" parent="Лодочник"]
-position = Vector2(14.5, -7.5)
+position = Vector2(63.5, -7.5)
 scale = Vector2(0.965909, 0.919643)
 texture = ExtResource("2_o2ssl")
 region_enabled = true
 region_rect = Rect2(184, 8, 64, 88)
 
 [node name="StrokeReady" type="Sprite2D" parent="Лодочник"]
-position = Vector2(-6.58929, -4.99999)
+position = Vector2(42.4107, -4.99999)
 scale = Vector2(0.816964, 0.8)
 texture = ExtResource("2_o2ssl")
 region_enabled = true
 region_rect = Rect2(32, 16, 72, 80)
 
 [node name="StrokeSitting" type="Sprite2D" parent="Лодочник"]
-position = Vector2(4.5, -8.13636)
+position = Vector2(53.5, -8.13636)
 scale = Vector2(0.854167, 0.885101)
 texture = ExtResource("2_o2ssl")
 region_enabled = true
 region_rect = Rect2(312, 16, 48, 72)
 
 [node name="Лодка" type="Area2D" parent="."]
-position = Vector2(31, -32)
+position = Vector2(31, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Лодка"]
-position = Vector2(4, 38)
+position = Vector2(-2, 11)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_hdgtj")
 
@@ -85,6 +89,7 @@ position = Vector2(113, -65)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Фонарь"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Фонарь"]
+position = Vector2(-148, -1)
 sprite_frames = SubResource("SpriteFrames_g684b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -97,4 +102,5 @@ position_smoothing_enabled = true
 
 [connection signal="timeout" from="Лодочник/StrokeTimerComplete" to="." method="_on_stroke_timer_complete_timeout"]
 [connection signal="timeout" from="Лодочник/StrokeTimerSitting" to="." method="_on_stroke_timer_sitting_timeout"]
+[connection signal="timeout" from="Лодочник/StrokeTimerReady" to="." method="_on_stroke_timer_ready_timeout"]
 [connection signal="timeout" from="StrokeTimer" to="." method="_on_stroke_timer_timeout"]
