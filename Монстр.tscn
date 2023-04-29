@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://xvcqbfvjchas"]
+
+[ext_resource type="Script" path="res://Монстр.gd" id="1_6sl2h"]
+[ext_resource type="Texture2D" uid="uid://cn8x5r8vxl47x" path="res://textures/test/Fly-Sheet.png" id="2_wv0m0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqbwu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s5rq"]
+atlas = ExtResource("2_wv0m0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wne2"]
+atlas = ExtResource("2_wv0m0")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_207mj"]
+atlas = ExtResource("2_wv0m0")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivges"]
+atlas = ExtResource("2_wv0m0")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ld82j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s5rq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wne2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_207mj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivges")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[node name="monster" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_6sl2h")
+
+[node name="monster" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="monster"]
+shape = SubResource("RectangleShape2D_hqbwu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="monster"]
+sprite_frames = SubResource("SpriteFrames_ld82j")
+animation = &"fly"

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2y1ubwhfle83"]
+
+[ext_resource type="PackedScene" uid="uid://darndyl1j2to4" path="res://Игрок.tscn" id="1_66q7l"]
+[ext_resource type="Script" path="res://mainScene.gd" id="1_lsrb5"]
+[ext_resource type="PackedScene" uid="uid://xvcqbfvjchas" path="res://Монстр.tscn" id="2_afctq"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_lsrb5")
+
+[node name="Игрок" parent="." instance=ExtResource("1_66q7l")]
+
+[node name="Монстр" parent="." instance=ExtResource("2_afctq")]
+monsterSpeed = 100
