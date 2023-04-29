@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1inebd0jkq5y"]
+[gd_scene load_steps=2 format=3 uid="uid://dmopsn642bohq"]
 
-[ext_resource type="PackedScene" uid="uid://xvcqbfvjchas" path="res://Монстр.tscn" id="1_ldrmm"]
+[ext_resource type="PackedScene" path="res://Монстр.tscn" id="1_ldrmm"]
 
 [node name="MonsterScene1" type="Node2D"]
 
