@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://xvcqbfvjchas"]
+[gd_scene load_steps=10 format=3 uid="uid://xvcqbfvjchas"]
 
 [ext_resource type="Script" path="res://Монстр.gd" id="1_6sl2h"]
 [ext_resource type="Texture2D" uid="uid://cn8x5r8vxl47x" path="res://textures/test/Fly-Sheet.png" id="2_wv0m0"]
+[ext_resource type="AudioStream" uid="uid://8igpilf55ke7" path="res://sounds/monster_waves.mp3" id="3_we5yc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqbwu"]
 
@@ -53,3 +54,19 @@ shape = SubResource("RectangleShape2D_hqbwu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="monster"]
 sprite_frames = SubResource("SpriteFrames_ld82j")
 animation = &"fly"
+
+[node name="TimerPlavnikov" type="Timer" parent="monster"]
+wait_time = 3.0
+
+[node name="TimerAnger" type="Timer" parent="monster"]
+wait_time = 10.0
+
+[node name="Label" type="Label" parent="monster"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="plovnik" type="AudioStreamPlayer2D" parent="monster"]
+stream = ExtResource("3_we5yc")
+
+[connection signal="timeout" from="monster/TimerPlavnikov" to="." method="_on_timer_plavnikov_timeout"]
+[connection signal="timeout" from="monster/TimerAnger" to="." method="_on_timer_anger_timeout"]
