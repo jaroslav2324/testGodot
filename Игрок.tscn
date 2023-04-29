@@ -62,3 +62,7 @@ position = Vector2(99, -30)
 sprite_frames = SubResource("SpriteFrames_g684b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="StrokeTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="StrokeTimer" to="." method="_on_stroke_timer_timeout"]
