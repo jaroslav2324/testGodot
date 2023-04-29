@@ -25,6 +25,8 @@ func _process(delta):
 
 	elif Input.is_action_just_released("stroke"):
 		$StrokeTimer.stop()
+
+
 		
 	if $"Лодочник/StrokeTimerComplete".is_stopped() and $"Лодочник/StrokeTimerReady".is_stopped() and $"Лодочник/StrokeTimerSitting".is_stopped():
 			set_stroke_sitting_texture()
