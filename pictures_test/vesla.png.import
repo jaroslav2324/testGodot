@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciplur5cpq6si"
-path="res://.godot/imported/lodka2.png-d0ae43b92f986cfba5064ee9cea78429.ctex"
+uid="uid://c2bfi30l2l3bq"
+path="res://.godot/imported/vesla.png-2976ab586f9342760fda3b9274bcd262.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pictures_test/lodka2.png"
-dest_files=["res://.godot/imported/lodka2.png-d0ae43b92f986cfba5064ee9cea78429.ctex"]
+source_file="res://pictures_test/vesla.png"
+dest_files=["res://.godot/imported/vesla.png-2976ab586f9342760fda3b9274bcd262.ctex"]
 
 [params]
 
