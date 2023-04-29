@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnh6ocjdbamb0"]
+[gd_scene load_steps=10 format=3 uid="uid://c2y1ubwhfle83"]
 
 [ext_resource type="PackedScene" uid="uid://darndyl1j2to4" path="res://Игрок.tscn" id="1_66q7l"]
 [ext_resource type="Script" path="res://mainScene.gd" id="1_lsrb5"]
@@ -49,6 +49,8 @@ sources/1 = SubResource("TileSetAtlasSource_frkkm")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lsrb5")
+
+[node name="Глаз" parent="." instance=ExtResource("4_c5pfo")]
 
 [node name="Игрок" parent="." instance=ExtResource("1_66q7l")]
 

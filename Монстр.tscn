@@ -53,3 +53,10 @@ shape = SubResource("RectangleShape2D_hqbwu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="monster"]
 sprite_frames = SubResource("SpriteFrames_ld82j")
 animation = &"fly"
+
+[node name="TimerPlavnikov" type="Timer" parent="monster"]
+
+[node name="TimerAnger" type="Timer" parent="monster"]
+wait_time = 5.0
+
+[connection signal="timeout" from="monster/TimerAnger" to="." method="_on_timer_anger_timeout"]

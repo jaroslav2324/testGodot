@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://darndyl1j2to4"]
+[gd_scene load_steps=12 format=3 uid="uid://darndyl1j2to4"]
 
 [ext_resource type="Script" path="res://Игрок.gd" id="1_hl4fj"]
 [ext_resource type="Texture2D" uid="uid://nd6ntl3q0ern" path="res://pictures_test/lodochnik.png" id="2_o2ssl"]
